@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% block content %}
+  &nbsp;&nbsp;<h1>Accounting Quiz</h1>
+  <br/>
+  {% for q in qiz %}
+  <p>
+    {{ q.id }}.&nbsp;{{ q.ques }}
+  </p> 
+   <button type="button" value={{q.choi1}}  onclick="f1(this,'{{ q.desc }}','{{q.ans}}')">
+   {{ q.choi1 }} 
+   </button>
+   &nbsp;&nbsp;&nbsp;
+   <button type="button" value={{q.choi2}}  onclick="f1(this,'{{ q.desc }}','{{q.ans}}')">
+   {{ q.choi2 }}
+   </button> 
+   <br/><br/>
+   {% endfor %} 
+   <div class="modal">
+   <div class="modal-content">
+   <span class="close-button">&times;</span>
+   <p id="desc">Hello, I am a modal!</p>
+   </div>
+   </div> 
+   <script>  
+   const modal = document.querySelector(".modal");
+   const closeButton = document.querySelector(".close-button");
+   function f1(w,x,y){ 
+     if (w.value==y){  
+       document.getElementById("desc").innerHTML = "✅ Right!\n"+x;
+       modal.classList.toggle("show-modal");
+       } 
+     else { 
+       document.getElementById("desc").innerHTML = "❎ Wrong!\n"+x;
+       modal.classList.toggle("show-modal");
+     }
+   }
+   
+   function windowOnClick(event) {
+        if (event.target === modal) {
+             f1();
+        }
+    } 
+    closeButton.addEventListener("click", f1);
+    window.addEventListener("click", windowOnClick);
+   </script>
+{% endblock content %}

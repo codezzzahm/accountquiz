@@ -1,0 +1,90 @@
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */ 
+body {
+  margin: 25px;
+  background-color: #ffffff;
+  font-family: arial, sans-serif;
+  font-size: 14px; 
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h1 { 
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px; 
+  color: #4285F4; 
+} 
+
+button { 
+  background-color: #4285F4;
+  color: white;
+  padding: 6px 6px;
+  text-align: center;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+p {
+  font-weight: normal; 
+  font-size: 16px;
+  margin-top: 5px; 
+  color: black;
+} 
+
+.modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    } 
+    
+    
+.modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 20rem;
+        border-radius: 0.5rem;
+    } 
+    
+.close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    } 
+    
+.close-button:hover {
+        background-color: darkgray;
+    } 
+    
+.show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+	
+/* Applies to all elements with <... class="someclass"> specified. */
+#desc{
+  font-weight: normal; 
+  font-size: 16px;
+  margin-top: 5px; 
+  color: black;
+}
+/* Applies to the element with <... id="someid"> specified. */
